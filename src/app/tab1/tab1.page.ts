@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { SenhasService } from '../services/senhas.service';
+
+
 
 @Component({
   selector: 'app-tab1',
@@ -6,8 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss'],
   standalone: false,
 })
+
 export class Tab1Page {
 
-  constructor() {}
+  public mostrarCaixa = false;
+ 
+  constructor(public senhasService: SenhasService) {
+
+
+  }
 
 }

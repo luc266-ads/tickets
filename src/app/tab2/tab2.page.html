@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+  GUICHÊS
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,26 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
+
+<ion-accordion-group>
+  <ion-accordion value="first">
+    <ion-item slot="header">
+      <ion-label>GUICHÊ 01</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">RESPONSAVEL PELA RETIRADA DE EXAME</div>
+  </ion-accordion>
+  <ion-accordion value="second">
+    <ion-item slot="header">
+      <ion-label>GUICHÊ 02</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">ADMINISTRAÇÃO PARA AGENDAMENTO DE EXAME MEDICO</div>
+  </ion-accordion>
+  <ion-accordion value="third">
+    <ion-item slot="header">
+      <ion-label>GUICHÊ 03</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">PRA BUSCA INFORMAÇÃO DA CLINICA PARA REALIZAR O EXAME</div>
+  </ion-accordion>
+</ion-accordion-group>
 </ion-content>

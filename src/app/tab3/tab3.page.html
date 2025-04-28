@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="medium">
     <ion-title>
-      Tab 3
+      SOBRE/RELATORIO
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,56 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  <ion-card color="medium">
+    <ion-card-header>
+      <ion-card-title>SOBRE</ion-card-title>
+      <ion-card-subtitle  style="color: rgb(6, 193, 240); font-weight: bold; font-family: 'Trebuchet MS', sans-serif;" >ESTE A APP TEM COM FINALIDADE DE APREDIZADO E PARA AVALIAÇÃO DA DISCIPLICA DESENVOLVIMENTO
+        MOBILE</ion-card-subtitle>
+    </ion-card-header>
+
+  </ion-card>
+  <ion-card color="medium">
+    <ion-card-header>
+      <ion-card-title>ALUNOS</ion-card-title>
+      <ion-card-subtitle style="color: rgb(6, 193, 240); font-weight: bold; font-family: 'Trebuchet MS', sans-serif;" >PROJETO-MOBILE</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content style="margin: 0%;padding: 0%;">
+        <ion-item color="medium" >
+          <ion-label style=" font-weight: bold; font-family: 'Trebuchet MS', sans-serif;" >LUCAS CASSIANO DE ARRUDA </ion-label>
+          <ion-card-subtitle style=" font-weight: bold; font-family: 'Trebuchet MS', sans-serif;" >MATRICULA: 01724975</ion-card-subtitle>
+        </ion-item>   
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="medium">
+    <ion-card-header>
+    <ion-card-title>CONTAGEM DE SENHAS EMITIDAS</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list style="padding: 0%;margin: 0%;">
+        <ion-item  color="medium">Senhas emitidas: {{senhasService.senhasTotal}}</ion-item>
+        <ion-item  color="medium">Senhas Geral: {{senhasService.senhasGeral}}</ion-item>
+        <ion-item  color="medium">Senha Prioritárias: {{senhasService.senhasPrior}}</ion-item>
+        <ion-item  color="medium" >Senha Exame: {{senhasService.senhasExame}}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-accordion-group >
+    <ion-accordion value="first">
+      <ion-item slot="header">
+        <ion-label color="medium">RELATORIO CASDASTRO</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content" *ngFor="let dado of senhasService.dadosArmazenados" style="color: rgb(6, 193, 240);">
+        Nome:
+        {{ dado.nome }}
+        Email:
+        {{ dado.cpf }}
+        Telefone:
+        {{ dado.telefone }}
+     
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
 </ion-content>

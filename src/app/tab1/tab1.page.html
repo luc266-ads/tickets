@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
+  <ion-toolbar  color ="medium">
+    <ion-title id="titulo">
+     CLINICA VIDA PLENA (TICKS) - PROJETO MOBILE
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,54 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card color = "medium">
+    <img alt="Silhouette of mountains" src="https://imeb.com.br/wp-content/uploads/2023/10/casal-de-medicos-sorrindo.jpg" />
+    <ion-card-header>
+      <ion-card-title >Bem-Vindo ao Nosso App!!</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content style="color: rgb(6, 193, 240);">
+      "Cuidar do corpo é um ato de gratidão pela vida; cultivar a mente é um compromisso com o próprio bem-estar." 
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="medium">
+    <ion-card-header id="tituloCadastro" style="font-size: 25px; font-weight: bolder; font-family: 'Trebuchet MS', sans-serif;">
+      MENU DE CASDASTRO
+    </ion-card-header>
+    <ion-card-content>
+      
+      <form (ngSubmit)="senhasService.armazenarDados()">
+        <ion-input [(ngModel)]="senhasService.nome" name="nome" label="NOME:" style="font-size: 15px; font-weight: bolder; font-family: 'Trebuchet MS', sans-serif; color: rgb(6, 193, 240);" stplaceholder="NOME COMPLETO"
+          label-placement="floating"></ion-input>
+        <ion-input [(ngModel)]="senhasService.cpf" name="cpf" label="CPF: " style="font-size: 15px; font-weight: bolder; font-family: 'Trebuchet MS', sans-serif; color: rgb(6, 193, 240);" placeholder="000.000.000-00"
+          label-placement="floating" maxlength="14"></ion-input>
+        <ion-input [(ngModel)]="senhasService.telefone" name="telefone" label="TELEFONE: " style="font-size: 15px; font-weight: bolder; font-family: 'Trebuchet MS', sans-serif; color: rgb(6, 193, 240);"
+          placeholder="(DD)0000-0000" label-placement="floating" maxlength="14"></ion-input>
+          <ion-checkbox id = "textBox">Aceito os termos de codição dos meus dados <a href="#" style="color: rgb(6, 193, 240);" (click)="$event.stopPropagation()"> termos e codições</a></ion-checkbox>
+        <ion-button expand="full" type="submit" (click)="mostrarCaixa = true"
+         (click)= "senhasService.armazenarDados()"color="light">continuar</ion-button>
+         
+    
+
+      </form>
+
+
+      <ion-card-content *ngIf="mostrarCaixa">
+        <div id ="titleBotao">
+         <ion-card-header  id="textBotao">ESCOLHA SUA SENHA</ion-card-header>
+        <ion-button style="color: rgb(6, 193, 240);" name="botaosg" expand="full" (click)="mostrarCaixa = !mostrarCaixa"
+          (click)=" senhasService.novaSenha('SG')">Senha Geral</ion-button>
+        <ion-button style="color: rgb(6, 193, 240);" expand="full" (click)="mostrarCaixa = !mostrarCaixa"
+          (click)=" senhasService.novaSenha('SP')">Senha
+          Prioritarial</ion-button>
+        <ion-button style="color: rgb(6, 193, 240);" expand="full" (click)="mostrarCaixa = !mostrarCaixa"
+          (click)=" senhasService.novaSenha('SE')">Senha Exame</ion-button>
+         </div>
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+
+
+  
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>
